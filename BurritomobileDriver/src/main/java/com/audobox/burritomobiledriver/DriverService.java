@@ -7,7 +7,6 @@ import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -98,8 +97,8 @@ public class DriverService extends Service {
         public void setup() {
             btAdapter = BluetoothAdapter.getDefaultAdapter();
 
-            IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-            registerReceiver(bluetoothFoundReceiver, filter); // Don't forget to unregister during onDestroy
+//            IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+//            registerReceiver(bluetoothFoundReceiver, filter); // Don't forget to unregister during onDestroy
             BluetoothDevice device = btAdapter.getRemoteDevice("00:06:66:08:60:0E");
             connect(device);
 
